@@ -47,14 +47,14 @@
         ]
     },
     "dependencies": {
-        "@youwol/cdn-client": "^1.0.2",
-        "@youwol/flux-view": "^1.0.3",
-        "rxjs": "^6.5.5"
+        "@youwol/vsf-core": "^0.2.0",
+        "rxjs": "^6.5.5",
+        "@youwol/fv-tree": "^0.2.3",
+        "@youwol/http-clients": "^2.0.5"
     },
     "youwol": {
         "cdnDependencies": {
-            "@youwol/cdn-client": "^1.0.2",
-            "@youwol/flux-view": "^1.0.3",
+            "@youwol/vsf-core": "^0.2.0",
             "rxjs": "^6.5.5"
         }
     }

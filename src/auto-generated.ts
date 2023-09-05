@@ -1,54 +1,82 @@
 
 const runTimeDependencies = {
     "externals": {
-        "@youwol/cdn-client": "^1.0.2",
-        "@youwol/flux-view": "^1.0.3",
-        "rxjs": "^6.5.5"
+        "@youwol/vsf-core": "^0.2.0",
+        "rxjs": "^6.5.5",
+        "@youwol/fv-tree": "^0.2.3",
+        "@youwol/http-clients": "^2.0.5"
     },
     "includedInBundle": {}
 }
 const externals = {
-    "@youwol/cdn-client": {
-        "commonjs": "@youwol/cdn-client",
-        "commonjs2": "@youwol/cdn-client",
-        "root": "@youwol/cdn-client_APIv1"
-    },
-    "@youwol/flux-view": {
-        "commonjs": "@youwol/flux-view",
-        "commonjs2": "@youwol/flux-view",
-        "root": "@youwol/flux-view_APIv1"
+    "@youwol/vsf-core": {
+        "commonjs": "@youwol/vsf-core",
+        "commonjs2": "@youwol/vsf-core",
+        "root": "@youwol/vsf-core_APIv02"
     },
     "rxjs": {
         "commonjs": "rxjs",
         "commonjs2": "rxjs",
         "root": "rxjs_APIv6"
+    },
+    "@youwol/fv-tree": {
+        "commonjs": "@youwol/fv-tree",
+        "commonjs2": "@youwol/fv-tree",
+        "root": "@youwol/fv-tree_APIv02"
+    },
+    "@youwol/http-clients": {
+        "commonjs": "@youwol/http-clients",
+        "commonjs2": "@youwol/http-clients",
+        "root": "@youwol/http-clients_APIv2"
+    },
+    "rxjs/operators": {
+        "commonjs": "rxjs/operators",
+        "commonjs2": "rxjs/operators",
+        "root": [
+            "rxjs_APIv6",
+            "operators"
+        ]
     }
 }
 const exportedSymbols = {
-    "@youwol/cdn-client": {
-        "apiKey": "1",
-        "exportedSymbol": "@youwol/cdn-client"
-    },
-    "@youwol/flux-view": {
-        "apiKey": "1",
-        "exportedSymbol": "@youwol/flux-view"
+    "@youwol/vsf-core": {
+        "apiKey": "02",
+        "exportedSymbol": "@youwol/vsf-core"
     },
     "rxjs": {
         "apiKey": "6",
         "exportedSymbol": "rxjs"
+    },
+    "@youwol/fv-tree": {
+        "apiKey": "02",
+        "exportedSymbol": "@youwol/fv-tree"
+    },
+    "@youwol/http-clients": {
+        "apiKey": "2",
+        "exportedSymbol": "@youwol/http-clients"
     }
 }
 
 const mainEntry : {entryFile: string,loadDependencies:string[]} = {
     "entryFile": "./index.ts",
     "loadDependencies": [
-        "@youwol/cdn-client",
-        "@youwol/flux-view",
+        "@youwol/vsf-core",
         "rxjs"
     ]
 }
 
-const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDependencies:string[]}}= {}
+const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDependencies:string[]}}= {
+    "explorer": {
+        "entryFile": "./lib/explorer/index.ts",
+        "loadDependencies": [
+            "@youwol/vsf-core",
+            "@youwol/fv-tree",
+            "rxjs",
+            "@youwol/http-clients"
+        ],
+        "name": "explorer"
+    }
+}
 
 const entries = {
      '@youwol/vsf-files': './index.ts',
@@ -58,7 +86,7 @@ export const setup = {
     name:'@youwol/vsf-files',
         assetId:'QHlvdXdvbC92c2YtZmlsZXM=',
     version:'0.1.0-wip',
-    shortDescription:"",
+    shortDescription:"Visual Studio Flow toolbox gathering modules related to files management.",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/vsf-files&tab=doc',
     npmPackage:'https://www.npmjs.com/package/@youwol/vsf-files',
     sourceGithub:'https://github.com/youwol/vsf-files',
