@@ -50,7 +50,16 @@ template = Template(
                     "rxjs",
                     "@youwol/http-clients",
                 ],
-            )
+            ),
+            AuxiliaryModule(
+                name="reader",
+                entryFile="./lib/reader/index.ts",
+                loadDependencies=[
+                    "@youwol/vsf-core",
+                    "rxjs",
+                    "@youwol/http-clients",
+                ],
+            ),
         ],
     ),
     userGuide=True,

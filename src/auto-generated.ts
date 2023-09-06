@@ -75,6 +75,15 @@ const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDepen
             "@youwol/http-clients"
         ],
         "name": "explorer"
+    },
+    "reader": {
+        "entryFile": "./lib/reader/index.ts",
+        "loadDependencies": [
+            "@youwol/vsf-core",
+            "rxjs",
+            "@youwol/http-clients"
+        ],
+        "name": "reader"
     }
 }
 

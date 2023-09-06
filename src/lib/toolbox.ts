@@ -5,6 +5,7 @@ import { Modules } from '@youwol/vsf-core'
 
 type Modules = {
     explorer: typeof import('./explorer/explorer.module')
+    reader: typeof import('./reader/reader.module')
 }
 
 function getImplementationModule<T extends keyof Modules>(name: T): Modules[T] {
@@ -42,6 +43,21 @@ export function toolbox() {
                 },
                 implementation: ({ fwdParams }) => {
                     return getImplementationModule('explorer').module(fwdParams)
+                },
+            }),
+            new Modules.Module({
+                declaration: {
+                    typeId: 'reader',
+                    documentation: urlModuleDoc('Reader'),
+                    dependencies: {
+                        modules: setup.getCdnDependencies('reader'),
+                        scripts: [
+                            `${setup.name}#${setup.version}~dist/${setup.name}/reader.js`,
+                        ],
+                    },
+                },
+                implementation: ({ fwdParams }) => {
+                    return getImplementationModule('reader').module(fwdParams)
                 },
             }),
         ],
