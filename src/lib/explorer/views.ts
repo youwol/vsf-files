@@ -6,6 +6,7 @@ import { ExplorerState, ModuleState } from './explorer.module'
 
 export function html(state: ModuleState) {
     return {
+        class: 'vh-100 fv-bg-background fv-text-primary',
         children: [
             child$(state.treeState$, (state) => {
                 return new ImmutableTree.View({
