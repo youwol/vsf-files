@@ -1,4 +1,4 @@
-import { Configurations, Contracts, Modules } from '@youwol/vsf-core'
+import { Contracts, Modules } from '@youwol/vsf-core'
 import { map, mergeMap } from 'rxjs/operators'
 import { AssetsGateway } from '@youwol/http-clients'
 import { from } from 'rxjs'
@@ -7,7 +7,7 @@ import { raiseHTTPErrors } from '@youwol/http-primitives'
 type Mode = 'bytes' | 'text' | 'json'
 export const configuration = {
     schema: {
-        mode: new Configurations.StringLiteral<Mode>({
+        mode: Modules.stringLiteralAttribute<Mode>({
             value: 'bytes',
         }),
     },

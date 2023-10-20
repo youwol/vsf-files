@@ -9,7 +9,7 @@ import { html } from './views'
 
 export const configuration = {
     schema: {
-        parentId: new Configurations.String({
+        parentId: Modules.stringAttribute({
             value: '',
         }),
     },
