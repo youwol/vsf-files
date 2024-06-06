@@ -1,4 +1,4 @@
-import { ImmutableTree } from '@youwol/fv-tree'
+import { ImmutableTree } from '@youwol/rx-tree-views'
 import { ExplorerBackend } from '@youwol/http-clients'
 import { raiseHTTPErrors } from '@youwol/http-primitives'
 import { map } from 'rxjs/operators'

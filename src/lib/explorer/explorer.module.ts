@@ -1,7 +1,7 @@
 import { Modules, Configurations } from '@youwol/vsf-core'
 import { ExplorerBackend, AssetsGateway } from '@youwol/http-clients'
 import { raiseHTTPErrors } from '@youwol/http-primitives'
-import { ImmutableTree } from '@youwol/fv-tree'
+import { ImmutableTree } from '@youwol/rx-tree-views'
 import { filter, map, mergeMap } from 'rxjs/operators'
 import { BehaviorSubject, Observable, Subject } from 'rxjs'
 import { createFolderNode, NodeBase } from './nodes'

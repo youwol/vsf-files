@@ -20,7 +20,7 @@ pkg_json = parse_json(folder_path / "package.json")
 
 template = Template(
     path=folder_path,
-    type=PackageType.Library,
+    type=PackageType.LIBRARY,
     name=pkg_json["name"],
     version=pkg_json["version"],
     shortDescription=pkg_json["description"],
@@ -28,10 +28,10 @@ template = Template(
     dependencies=Dependencies(
         runTime=RunTimeDeps(
             externals={
-                "@youwol/vsf-core": "^0.2.4",
-                "rxjs": "^6.5.5",
-                "@youwol/fv-tree": "^0.2.3",
-                "@youwol/http-clients": "^2.0.5",
+                "@youwol/vsf-core": "^0.3.1",
+                "rxjs": "^7.5.6",
+                "@youwol/rx-tree-views": "^0.3.3",
+                "@youwol/http-clients": "^3.0.1",
             }
         )
     ),
@@ -46,7 +46,7 @@ template = Template(
                 entryFile="./lib/explorer/index.ts",
                 loadDependencies=[
                     "@youwol/vsf-core",
-                    "@youwol/fv-tree",
+                    "@youwol/rx-tree-views",
                     "rxjs",
                     "@youwol/http-clients",
                 ],

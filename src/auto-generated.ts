@@ -1,59 +1,59 @@
 
 const runTimeDependencies = {
     "externals": {
-        "@youwol/vsf-core": "^0.2.4",
-        "rxjs": "^6.5.5",
-        "@youwol/fv-tree": "^0.2.3",
-        "@youwol/http-clients": "^2.0.5"
+        "@youwol/http-clients": "^3.0.1",
+        "@youwol/rx-tree-views": "^0.3.3",
+        "@youwol/vsf-core": "^0.3.1",
+        "rxjs": "^7.5.6"
     },
     "includedInBundle": {}
 }
 const externals = {
+    "@youwol/http-clients": {
+        "commonjs": "@youwol/http-clients",
+        "commonjs2": "@youwol/http-clients",
+        "root": "@youwol/http-clients_APIv3"
+    },
+    "@youwol/rx-tree-views": {
+        "commonjs": "@youwol/rx-tree-views",
+        "commonjs2": "@youwol/rx-tree-views",
+        "root": "@youwol/rx-tree-views_APIv03"
+    },
     "@youwol/vsf-core": {
         "commonjs": "@youwol/vsf-core",
         "commonjs2": "@youwol/vsf-core",
-        "root": "@youwol/vsf-core_APIv02"
+        "root": "@youwol/vsf-core_APIv03"
     },
     "rxjs": {
         "commonjs": "rxjs",
         "commonjs2": "rxjs",
-        "root": "rxjs_APIv6"
-    },
-    "@youwol/fv-tree": {
-        "commonjs": "@youwol/fv-tree",
-        "commonjs2": "@youwol/fv-tree",
-        "root": "@youwol/fv-tree_APIv02"
-    },
-    "@youwol/http-clients": {
-        "commonjs": "@youwol/http-clients",
-        "commonjs2": "@youwol/http-clients",
-        "root": "@youwol/http-clients_APIv2"
+        "root": "rxjs_APIv7"
     },
     "rxjs/operators": {
         "commonjs": "rxjs/operators",
         "commonjs2": "rxjs/operators",
         "root": [
-            "rxjs_APIv6",
+            "rxjs_APIv7",
             "operators"
         ]
     }
 }
 const exportedSymbols = {
+    "@youwol/http-clients": {
+        "apiKey": "3",
+        "exportedSymbol": "@youwol/http-clients"
+    },
+    "@youwol/rx-tree-views": {
+        "apiKey": "03",
+        "exportedSymbol": "@youwol/rx-tree-views"
+    },
     "@youwol/vsf-core": {
-        "apiKey": "02",
+        "apiKey": "03",
         "exportedSymbol": "@youwol/vsf-core"
     },
     "rxjs": {
-        "apiKey": "6",
+        "apiKey": "7",
         "exportedSymbol": "rxjs"
-    },
-    "@youwol/fv-tree": {
-        "apiKey": "02",
-        "exportedSymbol": "@youwol/fv-tree"
-    },
-    "@youwol/http-clients": {
-        "apiKey": "2",
-        "exportedSymbol": "@youwol/http-clients"
     }
 }
 
@@ -70,7 +70,7 @@ const secondaryEntries : {[k:string]:{entryFile: string, name: string, loadDepen
         "entryFile": "./lib/explorer/index.ts",
         "loadDependencies": [
             "@youwol/vsf-core",
-            "@youwol/fv-tree",
+            "@youwol/rx-tree-views",
             "rxjs",
             "@youwol/http-clients"
         ],
@@ -94,13 +94,13 @@ const entries = {
 export const setup = {
     name:'@youwol/vsf-files',
         assetId:'QHlvdXdvbC92c2YtZmlsZXM=',
-    version:'0.1.1',
+    version:'0.2.0-wip',
     shortDescription:"Visual Studio Flow toolbox gathering modules related to files management.",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/vsf-files&tab=doc',
     npmPackage:'https://www.npmjs.com/package/@youwol/vsf-files',
     sourceGithub:'https://github.com/youwol/vsf-files',
     userGuide:'https://l.youwol.com/doc/@youwol/vsf-files',
-    apiVersion:'01',
+    apiVersion:'02',
     runTimeDependencies,
     externals,
     exportedSymbols,
@@ -125,7 +125,7 @@ export const setup = {
             modules,
             scripts,
         }).then(() => {
-            return window[`@youwol/vsf-files_APIv01`]
+            return window[`@youwol/vsf-files_APIv02`]
         })
     },
     installAuxiliaryModule: ({name, cdnClient, installParameters}:{
@@ -140,7 +140,7 @@ export const setup = {
         const parameters = installParameters || {}
         const scripts = [
             ...(parameters.scripts || []),
-            `@youwol/vsf-files#0.1.1~dist/@youwol/vsf-files/${entry.name}.js`
+            `@youwol/vsf-files#0.2.0-wip~dist/@youwol/vsf-files/${entry.name}.js`
         ]
         const modules = [
             ...(parameters.modules || []),
@@ -151,7 +151,7 @@ export const setup = {
             modules,
             scripts,
         }).then(() => {
-            return window[`@youwol/vsf-files/${entry.name}_APIv01`]
+            return window[`@youwol/vsf-files/${entry.name}_APIv02`]
         })
     },
     getCdnDependencies(name?: string){
