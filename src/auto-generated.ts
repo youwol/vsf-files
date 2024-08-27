@@ -94,7 +94,7 @@ const entries = {
 export const setup = {
     name:'@youwol/vsf-files',
         assetId:'QHlvdXdvbC92c2YtZmlsZXM=',
-    version:'0.2.0-wip',
+    version:'0.2.0',
     shortDescription:"Visual Studio Flow toolbox gathering modules related to files management.",
     developerDocumentation:'https://platform.youwol.com/applications/@youwol/cdn-explorer/latest?package=@youwol/vsf-files&tab=doc',
     npmPackage:'https://www.npmjs.com/package/@youwol/vsf-files',
@@ -140,7 +140,7 @@ export const setup = {
         const parameters = installParameters || {}
         const scripts = [
             ...(parameters.scripts || []),
-            `@youwol/vsf-files#0.2.0-wip~dist/@youwol/vsf-files/${entry.name}.js`
+            `@youwol/vsf-files#0.2.0~dist/@youwol/vsf-files/${entry.name}.js`
         ]
         const modules = [
             ...(parameters.modules || []),
