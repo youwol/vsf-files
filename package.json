@@ -1,7 +1,7 @@
 {
     "name": "@youwol/vsf-files",
     "description": "Visual Studio Flow toolbox gathering modules related to files management.",
-    "version": "0.2.0",
+    "version": "0.2.1-wip",
     "author": "greinisch@youwol.com",
     "homepage": "https://github.com/youwol/vsf-files#README.md",
     "main": "dist/@youwol/vsf-files.js",
