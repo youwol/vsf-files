@@ -35,10 +35,12 @@ export function toolbox() {
                     typeId: 'explorer',
                     documentation: urlModuleDoc('Explorer'),
                     dependencies: {
-                        modules: setup.getCdnDependencies('explorer'),
-                        scripts: [
-                            `${setup.name}#${setup.version}~dist/${setup.name}/explorer.js`,
-                        ],
+                        esm: {
+                            modules: setup.getCdnDependencies('explorer'),
+                            scripts: [
+                                `${setup.name}#${setup.version}~dist/${setup.name}/explorer.js`,
+                            ],
+                        },
                     },
                 },
                 implementation: ({ fwdParams }) => {
@@ -50,10 +52,12 @@ export function toolbox() {
                     typeId: 'reader',
                     documentation: urlModuleDoc('Reader'),
                     dependencies: {
-                        modules: setup.getCdnDependencies('reader'),
-                        scripts: [
-                            `${setup.name}#${setup.version}~dist/${setup.name}/reader.js`,
-                        ],
+                        esm: {
+                            modules: setup.getCdnDependencies('reader'),
+                            scripts: [
+                                `${setup.name}#${setup.version}~dist/${setup.name}/reader.js`,
+                            ],
+                        },
                     },
                 },
                 implementation: ({ fwdParams }) => {
